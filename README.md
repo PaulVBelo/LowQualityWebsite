@@ -1,2 +1,2 @@
 # LowQualityWebsite
-trying to make a website that is worth a sh...
+this is just my poorly done homework, don't mind it
