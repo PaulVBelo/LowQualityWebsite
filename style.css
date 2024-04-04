@@ -18,6 +18,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 25px;
+    margin-bottom: 40px;
 }
 
 .header_background-color_pink-gradient {
@@ -55,8 +56,8 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    min-height: 640px;
     width: 100%;
+    height: fit-content;
 }
 
 .container_column {
@@ -64,39 +65,35 @@
 }
 
 .container__item {
-    height: 80vh;
-    min-height: 480px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 10px 0;
+    padding: 40px 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
 }
 
 .container__item_width_m {
-    min-width: 420px;
+    min-width: 360px;
     width: 30%;
 }
 
 .container__item_width_l {
-    min-width: 480px;
+    min-width: 420px;
     width: 40%;
 }
 
 .container__item_width_xl {
     min-width: 480px;
     width: 80%;
-}
-
-.container_no-height-restrict {
-    height: fit-content;
-}
-
-.container__item_image_paul-bw {
-    background-image: url(img/paul-bw.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
 }
 
 .overlay {
@@ -157,8 +154,16 @@
 }
 
 .inner-image {
-    height: 20%;
-    min-height: 64px;
+    height: 64px;
+}
+
+.portrait {
+    width: 360px;
+    height: 360px;
+    background-image: url(img/paul-bw.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .list-vertical {
