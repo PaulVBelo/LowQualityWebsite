@@ -1,2 +1,2 @@
-# LowQualityWebsite
-this is just my poorly done homework, don't mind it
+# testWebsite
+this is just my homework, don't take the website serously
