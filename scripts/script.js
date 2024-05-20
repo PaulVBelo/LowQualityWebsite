@@ -8,12 +8,14 @@ const popupReminderOpen = function() {
     popupReminderElement.classList.add("popup_opened");
     popupReminderContainer.classList.add("popup__container_opened");
     localStorage.setItem("is-reminder-opened", "true");
+    blockScrolling();
 }
 
 const popupReminderClose = function() {
     popupReminderElement.classList.remove("popup_opened");
     popupReminderContainer.classList.remove("popup__container_opened");
     localStorage.setItem("is-reminder-opened", "false");
+    unlockScrolling()
 }
 
 const popupReminderOpenFirst = function () {
@@ -65,6 +67,7 @@ const popupFromClose = function() {
     submitButton.style.backgroundColor = '#cc0256';
     submitButton.style.cursor = 'pointer';
     submitButton.disabled = false; 
+    unlockScrolling();
 }
 
 formCloseButton.addEventListener("click", function(evt) {
@@ -75,6 +78,7 @@ formButton.addEventListener('click', function(evt) {
     evt.preventDefault();
     popupForm.classList.add('popup_opened');
     formContainer.classList.add('popup__container_opened')
+    blockScrolling();
 });
 
 contactForm.addEventListener('submit', async function(evt) {
@@ -252,11 +256,13 @@ let currentImageLink = currentImageContainer.querySelector(".meme").src;
 function openPopupGallery() {
     popupGallery.classList.add("popup_opened");
     popupGalleryContainer.classList.add("popup__container_opened");
+    blockScrolling();
 }
 
 function closePopupGallery() {
     popupGallery.classList.remove("popup_opened");
     popupGalleryContainer.classList.remove("popup__container_opened");
+    unlockScrolling();
 }
 
 function switchNext() {
@@ -346,4 +352,21 @@ svg.onclick = (e) => {
     `
     side=(side+1)%colors.length;
     middle=(middle+1)%colors.length;
+}
+
+// Block scroll
+function unlockScrolling() {
+    const scrollY = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.overflow = 'auto';
+    document.body.style.marginRight = '0px';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+}
+
+function blockScrolling() {
+    document.body.style.position = 'absolute';
+    document.body.style.top = `-${window.scrollY}px`;
+    document.body.style.overflow = 'hidden';
+    document.body.style.marginRight = '15px';
 }
