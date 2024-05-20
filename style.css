@@ -481,8 +481,8 @@
     background: rgba(0, 0, 0, 0);
     box-shadow: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 60%;
+    left: 55%;
 }
 
 .popup__img-container {
@@ -501,6 +501,10 @@
 
     overflow: hidden;
     object-fit: scale-down;
+}
+
+.popup__gallery .popup__container_opened {
+    scale: 1.25;
 }
 
 .popup__container_opened {
